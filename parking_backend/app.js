@@ -49,7 +49,7 @@ app.use((error, req, res, next) => {
 });
 mongoose
   .connect(
-    `mongodb+srv://${MONGODB_USER}@cluster0.9fcw6ew.mongodb.net/parking?retryWrites=true&w=majority`
+    `mongodb+srv://todouser:Todo123@cluster0.9fcw6ew.mongodb.net/parking?retryWrites=true&w=majority`
   )
   .then(() => {
     app.listen(5500);
