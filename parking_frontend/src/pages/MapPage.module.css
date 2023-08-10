@@ -1,0 +1,33 @@
+.options {
+  background-color: var(--secondary);
+  position: absolute;
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  margin: auto;
+}
+.options a {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--menu);
+  border: 1px solid var(--secondary);
+  color: white;
+  text-decoration: none;
+}
+.options a img {
+  height: 20%;
+  color: wheat;
+}
+a img {
+  height: 30px;
+}
+.options a:hover {
+  background-color: var(--secondary);
+  border: 1px solid var(--menu);
+}

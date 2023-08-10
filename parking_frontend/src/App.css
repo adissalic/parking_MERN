@@ -1,0 +1,137 @@
+:root {
+  --primary: #66d7e0;
+  --secondary: #1c3d52;
+  --menu: #2c5f78;
+  --text-color: #ffffff;
+  --popup: #1c3d52b0;
+  --primaryFont: "Lovelo";
+  --footerFont: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+body {
+  background-color: var(--primary);
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+a {
+  font-family: var(--primaryFont);
+}
+.App {
+  font-family: var(--footerFont);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--text-color);
+  margin: auto;
+}
+
+.main {
+  z-index: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 90%;
+  background-color: var(--secondary);
+  box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.title {
+  position: absolute;
+  top: 6%;
+  width: 100%;
+}
+.options {
+  position: unset;
+  flex-flow: column;
+  justify-content: flex-start;
+  height: fit-content;
+  gap: 20px;
+  margin: 0;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.options button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  color: var(--text-color);
+  background-color: var(--menu);
+  border: 1px solid var(--secondary);
+  color: white;
+  text-decoration: none;
+}
+.options a {
+  font-size: 12px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: unset;
+  background-color: var(--primary);
+  width: 70%;
+  height: 30px;
+  border: 1px solid var(--secondary);
+  color: var(--text-color);
+  text-decoration: none;
+  padding-left: 0;
+}
+.options a img {
+  height: 20%;
+  color: wheat;
+  font-size: 12px;
+}
+a img {
+  height: 30px;
+}
+.options a:hover {
+  background-color: var(--secondary);
+  border: 1px solid var(--menu);
+}
+
+.heading {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/*Google maps styling*/
+.gm-style-iw-d {
+  color: var(--secondary);
+  overflow: unset !important;
+}
+
+.gm-style .gm-style-iw-c {
+  width: 200px;
+  padding: 0;
+  background-color: var(--primary);
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+.gm-style-iw.gm-style-iw-c:last-of-type {
+  display: none !important;
+}
+.text {
+  margin: 20px auto 5px;
+}

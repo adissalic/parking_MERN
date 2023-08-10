@@ -1,0 +1,55 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 90%;
+  background-color: var(--secondary);
+  box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.title {
+  position: absolute;
+  top: 7%;
+}
+.options {
+  background-color: var(--secondary);
+  position: absolute;
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  margin: auto;
+}
+.options a {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--menu);
+  width: 50%;
+  height: 49%;
+  border: 1px solid var(--secondary);
+  color: white;
+  text-decoration: none;
+}
+.options a img {
+  height: 20%;
+  color: wheat;
+}
+a img {
+  height: 30px;
+}
+.options a:hover {
+  background-color: var(--secondary);
+  border: 1px solid var(--menu);
+}

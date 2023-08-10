@@ -1,0 +1,95 @@
+.dots {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: var(--primaryFont);
+  color: var(--secondary);
+}
+.nav {
+  position: absolute;
+  background-color: var(--primary);
+  top: 7%;
+  right: 13%;
+  height: 85%;
+  z-index: 1;
+  color: var(--secondary);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.navClose {
+  z-index: 0;
+  width: 20%;
+  opacity: 0;
+  transition: ease-in 1s;
+  -webkit-transition: ease-in 1s;
+  -moz-transition: ease-in 1s;
+  -ms-transition: ease-in 1s;
+  -o-transition: ease-in 1s;
+}
+.navOpen {
+  z-index: 4;
+  width: 60%;
+  opacity: 1;
+  transition: ease-in-out 1s;
+  -webkit-transition: ease-in-out 1s;
+  -moz-transition: ease-in-out 1s;
+  -ms-transition: ease-in-out 1s;
+  -o-transition: ease-in-out 1s;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  padding-top: 40px;
+  gap: 20px;
+  height: 80%;
+}
+.burger {
+  position: absolute;
+}
+.close {
+  margin: 0;
+  width: 10%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  padding: 25px;
+  border: none;
+  color: var(--secondary);
+}
+.list {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  padding: 0;
+  margin-top: 30px;
+  list-style-type: none;
+}
+.open {
+  color: var(--primary);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8%;
+  right: 17%;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  rotate: 90deg;
+  z-index: 3;
+}
+.logout {
+  margin-top: auto;
+}
+
+.open:hover {
+  cursor: pointer;
+  color: var(--text-color);
+}
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}

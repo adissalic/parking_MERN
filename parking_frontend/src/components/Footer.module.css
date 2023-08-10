@@ -1,0 +1,16 @@
+.footer {
+  color: var(--menu);
+  font-family: var(--footerFont);
+  position: absolute;
+  bottom: 7%;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+.footer a {
+  color: var(--menu);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--primary);
+}

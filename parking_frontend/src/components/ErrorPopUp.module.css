@@ -1,0 +1,19 @@
+.error {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  background-color: var(--popup);
+  color: var(--text);
+  backdrop-filter: blur(5px);
+}
+.error p {
+  font-size: 15px;
+  max-width: 70%;
+}

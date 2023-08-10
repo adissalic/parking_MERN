@@ -1,0 +1,22 @@
+.authentication {
+  width: 70%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.authentication form {
+  margin-bottom: 1rem;
+}
+.authentication button:hover {
+  color: var(--primary);
+}
+
+.authentication__header {
+  color: white;
+  text-align: center;
+}
+
+.title{
+  margin-bottom: 70px;
+  font-size: 20px;
+}
