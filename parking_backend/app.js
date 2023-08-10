@@ -48,7 +48,9 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 mongoose
-  .connect(`${process.env.MONGODB_URL}`)
+  .connect(
+    `mongodb+srv://${MONGODB_USER}@cluster0.9fcw6ew.mongodb.net/parking?retryWrites=true&w=majority`
+  )
   .then(() => {
     app.listen(5500);
   })
