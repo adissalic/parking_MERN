@@ -1,6 +1,7 @@
 {
   "name": "parking",
   "version": "0.1.0",
+  "homepage": "https://effervescent-kangaroo-5feb5e.netlify.app/",
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^2.19.0",
