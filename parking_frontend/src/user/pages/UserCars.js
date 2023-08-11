@@ -37,7 +37,7 @@ const UserCars = () => {
     const fetchCars = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5500/api/cars/user/${userId}`,
+          `${process.env.REACT_APP_BASE_URL}cars/user/${userId}`,
           "GET",
           null,
           {
@@ -55,7 +55,7 @@ const UserCars = () => {
   const handleDelete = async (carId) => {
     try {
       await sendRequest(
-        `http://localhost:5500/api/cars/${carId}`,
+        `${process.env.REACT_APP_BASE_URL}cars/${carId}`,
         "DELETE",
         null,
         {
@@ -73,7 +73,7 @@ const UserCars = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `http://localhost:5500/api/cars/${userId}`,
+        `${process.env.REACT_APP_BASE_URL}cars/${userId}`,
         "POST",
         JSON.stringify({
           name: formState.inputs.name.value,

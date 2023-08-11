@@ -41,7 +41,7 @@ const navigate = useNavigate()
     event.preventDefault();
     try {
       await sendRequest(
-        `http://localhost:5500/api/users/${userId}`,
+        `${process.env.REACT_APP_BASE_URL}users/${userId}`,
         "PATCH",
         JSON.stringify({
           name: formState.inputs.name.value,

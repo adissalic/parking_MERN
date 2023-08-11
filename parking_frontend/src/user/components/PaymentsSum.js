@@ -10,8 +10,8 @@ const PaymentsSum = () => {
     const fetchSum = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5500/api/payments/${auth.userId}/sum`,
-          'GET',
+          `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}/sum`,
+          "GET",
           null,
           {
             Authorization: "Bearer " + auth.token,

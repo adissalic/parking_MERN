@@ -33,7 +33,7 @@ const CarSelection = ({ selectedPay, onClose }) => {
     const fetchCars = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5500/api/cars/user/${auth.userId}`,
+          `${process.env.REACT_APP_BASE_URL}cars/user/${auth.userId}`,
           "GET",
           null,
           {
@@ -50,7 +50,7 @@ const CarSelection = ({ selectedPay, onClose }) => {
   const carPayment = async (plate) => {
     try {
       await sendRequest(
-        `http://localhost:5500/api/payments/${auth.userId}`,
+        `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}`,
         "POST",
         JSON.stringify({
           id: selectedPay.id,

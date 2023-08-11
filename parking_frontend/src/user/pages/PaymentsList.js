@@ -14,7 +14,7 @@ const PaymentsList = () => {
     const fetchPayments = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5500/api/payments/${auth.userId}/payments?page=${pageNumber}`,
+          `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}/payments?page=${pageNumber}`,
           "GET",
           null,
           {

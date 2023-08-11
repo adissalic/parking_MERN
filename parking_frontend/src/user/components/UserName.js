@@ -13,7 +13,7 @@ const UserName = () => {
     const fetchName = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5500/api/users/${auth.userId}`
+          `${process.env.REACT_APP_BASE_URL}users/${auth.userId}`
         );
         setLoadedName(responseData.user.name);
       } catch (err) {}

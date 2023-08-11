@@ -18,7 +18,7 @@ const ListLocations = () => {
     const fetchPlaces = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5500/api/places/all/?page=${pageNumber}`,
+          `${process.env.REACT_APP_BASE_URL}places/all/?page=${pageNumber}`,
           "GET",
           null,
           {
