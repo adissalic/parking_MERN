@@ -36,7 +36,7 @@ function Map() {
     const fetchPlaces = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/places/`
+          process.env.REACT_APP_BACKEND_URL + "places/"
         );
         setLoadedMarkers(responseData.place);
         setMapLoaded(true);
