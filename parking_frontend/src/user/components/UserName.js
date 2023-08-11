@@ -3,7 +3,6 @@ import { useHttpClient } from "../../hooks/http-hook";
 import classes from "./UserName.module.css";
 import { AuthContext } from "../../context/auth-context";
 
-
 const UserName = () => {
   const { sendRequest } = useHttpClient();
   const [loadedName, setLoadedName] = useState();
@@ -13,7 +12,7 @@ const UserName = () => {
     const fetchName = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BASE_URL}users/${auth.userId}`
+          `https://parking-backend-06pc.onrender.com/api/users/${auth.userId}`
         );
         setLoadedName(responseData.user.name);
       } catch (err) {}

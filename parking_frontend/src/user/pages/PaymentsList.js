@@ -14,7 +14,7 @@ const PaymentsList = () => {
     const fetchPayments = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}/payments?page=${pageNumber}`,
+          `https://parking-backend-06pc.onrender.com/api/payments/${auth.userId}/payments?page=${pageNumber}`,
           "GET",
           null,
           {

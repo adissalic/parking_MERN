@@ -16,7 +16,7 @@ const LastPayments = () => {
     const fetchPayments = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}/last`,
+          `https://parking-backend-06pc.onrender.com/api/payments/${auth.userId}/last`,
           "GET",
           null,
           {
@@ -40,9 +40,11 @@ const LastPayments = () => {
 
   return (
     <React.Fragment>
-      {loadedPayments.length > 0  ? 
+      {loadedPayments.length > 0 ? (
         <h5 className={classes.text}>Klikni da platiš ponovo</h5>
-      : "Nemate plaćanja"}
+      ) : (
+        "Nemate plaćanja"
+      )}
       {loadedPayments.map((payment) => (
         <Link key={payment._id} onClick={() => carSelect(payment)}>
           {payment.name}

@@ -3,7 +3,11 @@ import React, { useContext } from "react";
 import { useHttpClient } from "../../hooks/http-hook";
 import { AuthContext } from "../../context/auth-context";
 import { useForm } from "../../hooks/form-hook";
-import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from "../../util/validators";
+import {
+  VALIDATOR_EMAIL,
+  VALIDATOR_MINLENGTH,
+  VALIDATOR_REQUIRE,
+} from "../../util/validators";
 
 import Button from "../components/FormElements/Button";
 import Input from "../components/FormElements/Input";
@@ -32,7 +36,7 @@ const UserAccount = () => {
     },
     false
   );
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const userDataString = localStorage.getItem("userData");
   const userDataObject = JSON.parse(userDataString);
   const userId = userDataObject.userId;
@@ -41,7 +45,7 @@ const navigate = useNavigate()
     event.preventDefault();
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BASE_URL}users/${userId}`,
+        `https://parking-backend-06pc.onrender.com/api/users/${userId}`,
         "PATCH",
         JSON.stringify({
           name: formState.inputs.name.value,
@@ -53,7 +57,7 @@ const navigate = useNavigate()
           "Content-Type": "application/json",
         }
       );
-      navigate("/")
+      navigate("/");
     } catch (err) {}
   };
   return (

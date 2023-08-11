@@ -37,7 +37,7 @@ const UserCars = () => {
     const fetchCars = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BASE_URL}cars/user/${userId}`,
+          `https://parking-backend-06pc.onrender.com/api/cars/user/${userId}`,
           "GET",
           null,
           {
@@ -55,7 +55,7 @@ const UserCars = () => {
   const handleDelete = async (carId) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BASE_URL}cars/${carId}`,
+        `https://parking-backend-06pc.onrender.com/api/cars/${carId}`,
         "DELETE",
         null,
         {
@@ -73,7 +73,7 @@ const UserCars = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BASE_URL}cars/${userId}`,
+        `https://parking-backend-06pc.onrender.com/api/cars/${userId}`,
         "POST",
         JSON.stringify({
           name: formState.inputs.name.value,

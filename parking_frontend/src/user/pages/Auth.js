@@ -81,7 +81,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BASE_URL}users/login`,
+          `https://parking-backend-06pc.onrender.com/api/users/login`,
           "POST",
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -100,7 +100,7 @@ const Auth = () => {
     } else {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BASE_URL}users/signup`,
+          `https://parking-backend-06pc.onrender.com/api/users/signup`,
           "POST",
           JSON.stringify({
             name: formState.inputs.name.value,
