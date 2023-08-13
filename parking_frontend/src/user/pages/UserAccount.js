@@ -45,7 +45,7 @@ const UserAccount = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `https://parking-backend-06pc.onrender.com/api/users/${userId}`,
+        `${process.env.REACT_APP_BASE_URL}users/${userId}`,
         "PATCH",
         JSON.stringify({
           name: formState.inputs.name.value,

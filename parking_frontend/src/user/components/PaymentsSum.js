@@ -12,7 +12,7 @@ const PaymentsSum = () => {
     const fetchSum = async () => {
       try {
         const responseData = await sendRequest(
-          `https://parking-backend-06pc.onrender.com/api/payments/${auth.userId}/sum`,
+          `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}/sum`,
           "GET",
           null,
           {

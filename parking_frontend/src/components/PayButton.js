@@ -34,7 +34,7 @@ const PayButton = (props) => {
   const placeSubmitHandler = async (cost) => {
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BASE_URL}/payments/${auth.userId}`,
+        `${process.env.REACT_APP_BASE_URL}payments/${auth.userId}`,
         "POST",
         JSON.stringify({
           id: props.id,

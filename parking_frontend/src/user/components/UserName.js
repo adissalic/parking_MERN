@@ -12,7 +12,7 @@ const UserName = () => {
     const fetchName = async () => {
       try {
         const responseData = await sendRequest(
-          `https://parking-backend-06pc.onrender.com/api/users/${auth.userId}`
+          `${process.env.REACT_APP_BASE_URL}users/${auth.userId}`
         );
         setLoadedName(responseData.user.name);
       } catch (err) {}

@@ -20,7 +20,7 @@ const ListLocations = () => {
     const fetchPlaces = async () => {
       try {
         const responseData = await sendRequest(
-          `https://parking-backend-06pc.onrender.com/api/places/all/?page=${pageNumber}`,
+          `${process.env.REACT_APP_BASE_URL}places/all/?page=${pageNumber}`,
           "GET",
           null,
           {
