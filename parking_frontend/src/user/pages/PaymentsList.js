@@ -25,7 +25,7 @@ const PaymentsList = () => {
         );
         setLoadedPayments(responseData.payments);
         setTotalPages(responseData.totalPayments);
-        setIsLoaded(true)
+        setIsLoaded(true);
       } catch (err) {}
     };
     fetchPayments();
@@ -41,8 +41,7 @@ const PaymentsList = () => {
       <p className="title">Vaš Parking</p>
       <h3 className="heading">Pregled plaćanja</h3>
       <div className={classes.options + " options"}>
-        {!isLoaded && <LoadingSpinner />
-        }
+        {!isLoaded && <LoadingSpinner />}
         {loadedPayments?.map((paymentsNew) => (
           <div className={classes.items} key={paymentsNew._id}>
             <span> {paymentsNew.name} </span>
@@ -51,7 +50,7 @@ const PaymentsList = () => {
         ))}
       </div>
       <div className={classes.pagination}>
-        <button onClick={goPrevious}> &lt; </button>
+        {!isLoaded && <button onClick={goPrevious}> &lt; </button>}
         {pages.map((pageIndex) => (
           <button
             className={pageIndex !== pageNumber ? "" : classes.active}
@@ -61,7 +60,7 @@ const PaymentsList = () => {
             {pageIndex + 1}
           </button>
         ))}
-        <button onClick={goNext}> &gt; </button>
+        {!isLoaded && <button onClick={goNext}> &gt; </button>}
       </div>
     </div>
   );
