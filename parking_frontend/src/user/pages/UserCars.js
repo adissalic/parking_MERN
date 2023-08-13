@@ -12,7 +12,7 @@ import { useForm } from "../../hooks/form-hook";
 
 const UserCars = () => {
   const auth = useContext(AuthContext);
-  const [isLoaded, setIsLoaded] = useState(false);
+
   const [popup, setPopup] = useState(false);
   const [loadedCars, setLoadedCars] = useState([]);
   const { isLoading, sendRequest } = useHttpClient();
@@ -46,8 +46,9 @@ const UserCars = () => {
           }
         );
         setLoadedCars(responseData.cars);
-        setIsLoaded(true)
-      } catch (err) {}
+      } catch (err) {
+
+      }
     };
     fetchCars();
     setFormData(formState.inputs);
@@ -95,7 +96,7 @@ const UserCars = () => {
         <p className="title">Vaš Parking</p>
         <h3 className="heading">Spisak vozila</h3>
         <div className={classes.options + " options"}>
-          {!isLoaded && <LoadingSpinner />}
+          {isLoading && <LoadingSpinner />}
           {loadedCars.map((cars) => (
             <div key={cars._id} className={classes.plates}>
               <button className={classes.car}>
@@ -114,7 +115,6 @@ const UserCars = () => {
             Dodaj
           </button>
         </div>
-        {isLoading && <LoadingSpinner />}
       </div>
       {popup && (
         <div className={classes.addingCars}>
