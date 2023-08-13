@@ -5,6 +5,7 @@ import classes from "./Map.module.css";
 import { useHttpClient } from "../hooks/http-hook";
 import { AuthContext } from "../context/auth-context";
 
+
 function Map() {
   const auth = useContext(AuthContext);
   const [markers, setLoadedMarkers] = useState([]);
@@ -56,6 +57,7 @@ function Map() {
     center,
     sendRequest,
     auth,
+    auth.userId
   ]);
 
   const handleOnLoad = (map) => {
@@ -82,6 +84,7 @@ function Map() {
       setActiveMarker(null);
     }
   };
+
   return (
     <React.Fragment>
       {mapLoaded && (
@@ -91,7 +94,7 @@ function Map() {
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={center}
           zoom={zoom}
-          >
+        >
           {markers.map(({ id, name, position, zone, price, daily }) => (
             <MarkerF
               key={id}
@@ -107,7 +110,7 @@ function Map() {
                       zone={zone}
                       price={price}
                       daily={daily}
-                    />
+                    />                    
                   </div>
                 </InfoWindowF>
               )}

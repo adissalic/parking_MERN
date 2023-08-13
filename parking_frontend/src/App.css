@@ -120,7 +120,9 @@ a img {
   color: var(--secondary);
   overflow: unset !important;
 }
-
+.gm-style-iw.gm-style-iw-c{
+  overflow-y: scroll;
+}
 .gm-style .gm-style-iw-c {
   width: 200px;
   padding: 0;
