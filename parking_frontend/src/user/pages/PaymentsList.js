@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHttpClient } from "../../hooks/http-hook";
 import classes from "./PaymentsList.module.css";
 import { AuthContext } from "../../context/auth-context";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const PaymentsList = () => {
   const auth = useContext(AuthContext);
   const [pageNumber, setPageNumber] = useState(0);
   const [loadedPayments, setLoadedPayments] = useState();
   const [totalPages, setTotalPages] = useState();
+  const [isLoaded, setIsLoaded] = useState(false);
   const { sendRequest } = useHttpClient();
   const pages = new Array(totalPages).fill(null).map((v, i) => i);
   useEffect(() => {
@@ -23,6 +25,7 @@ const PaymentsList = () => {
         );
         setLoadedPayments(responseData.payments);
         setTotalPages(responseData.totalPayments);
+        setIsLoaded(true)
       } catch (err) {}
     };
     fetchPayments();
@@ -38,6 +41,8 @@ const PaymentsList = () => {
       <p className="title">Vaš Parking</p>
       <h3 className="heading">Pregled plaćanja</h3>
       <div className={classes.options + " options"}>
+        {!isLoaded && <LoadingSpinner />
+        }
         {loadedPayments?.map((paymentsNew) => (
           <div className={classes.items} key={paymentsNew._id}>
             <span> {paymentsNew.name} </span>

@@ -3,10 +3,12 @@ import { useHttpClient } from "../../hooks/http-hook";
 import classes from "./ListLocations.module.css";
 import { AuthContext } from "../../context/auth-context";
 import CarSelection from "../components/CarSelection";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const ListLocations = () => {
   const auth = useContext(AuthContext);
   const [pageNumber, setPageNumber] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [loadedPlaces, setLoadedPlaces] = useState();
   const [totalPages, setTotalPages] = useState();
   const { sendRequest } = useHttpClient();
@@ -27,6 +29,7 @@ const ListLocations = () => {
         );
         setLoadedPlaces(responseData.place);
         setTotalPages(responseData.totalPages);
+        setIsLoaded(true)
       } catch (err) {}
     };
     fetchPlaces();
@@ -50,6 +53,7 @@ const ListLocations = () => {
       <p className="title">Vaš Parking</p>
       <h3 className="heading">Spisak lokacija</h3>
       <div className={classes.options + " options"}>
+        {!isLoaded && <LoadingSpinner />}
         {loadedPlaces?.map((placesNew) => (
           <div
             className={classes.items}

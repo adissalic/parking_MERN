@@ -4,9 +4,11 @@ import { useHttpClient } from "../../hooks/http-hook";
 import { AuthContext } from "../../context/auth-context";
 import classes from "./LastPayments.module.css";
 import CarSelection from "./CarSelection";
+import LoadingSpinner from "./LoadingSpinner";
 
 const LastPayments = () => {
   const [isSelectCarOpen, setIsSelectCarOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
   const [selectedPay, setSelectedPay] = useState([]);
   const { sendRequest } = useHttpClient();
   const auth = useContext(AuthContext);
@@ -24,6 +26,7 @@ const LastPayments = () => {
           }
         );
         setLoadedPayments(responseData.payments);
+        setIsLoaded(true)
       } catch (err) {}
     };
     fetchPayments();
@@ -40,6 +43,7 @@ const LastPayments = () => {
 
   return (
     <React.Fragment>
+      {!isLoaded && <LoadingSpinner />}
       {loadedPayments.length > 0 ? (
         <h5 className={classes.text}>Klikni da platiš ponovo</h5>
       ) : (
